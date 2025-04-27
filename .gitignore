@@ -1,0 +1,17 @@
+# Archivos de compilación
+/target/
+
+# Archivos de log
+*.log
+*.log.*
+
+# Archivos específicos de Eclipse
+.metadata/
+.classpath
+.project
+.settings/
+
+# Otros archivos temporales
+*.tmp
+*.bak
+*.swp
