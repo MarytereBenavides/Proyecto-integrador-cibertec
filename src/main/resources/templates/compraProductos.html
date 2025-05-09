@@ -24,20 +24,19 @@
 			</article>
 			<nav id="menu">
 				<ul>
-
 					<br>
-					<ul><a th:href="@{listar_Ctrl_Reposicion}">Gestion de Reposiciones</a></ul>
+					<ul><a class="btn btn-dark" th:href="@{listar_Ctrl_Reposicion}">Gestion de Reposiciones</a></ul>
 					<br>
-					<ul><a th:href="@{comprasProductos}">Compras</a></ul>
-					<ul><a th:href="@{ventaProductos}">Ventas</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{comprasProductos}">Compras</a></ul>
+					<ul><a  class="btn btn-ligth shadow-sm w-100" th:href="@{ventaProductos}">Ventas</a></ul>
 					<br>
-					<ul><a th:href="@{crud_Clientes}">Clientes</a></ul>
-					<ul><a th:href="@{crud_Proveedores}">Proveedores</a></ul>
-					<ul><a th:href="@{crud_Productos}">Productos</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Clientes}">Clientes</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Proveedores}">Proveedores</a></ul>
+					<ul><a  class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Productos}">Productos</a></ul>
 					<br>
 					<br>
-					<ul><a th:href="@{autentificar}">Cerrar sesión</a></ul>
-				</ul>|
+					<ul><a class="btn btn-dark w-100"  th:href="@{autentificar}">Cerrar sesión</a></ul>
+				</ul>
 			</nav>
 			<br />
 				<p1>Desarrollado por Cibertec</p1>
@@ -84,7 +83,7 @@
 											type="number" class="form-control"
 											th:field="*{cantidad}">
 									</div>
-									<input type="submit" class="btn btn-primary mt-2"
+									<input type="submit" class="btn mt-2" style ="background-color: #2e003e; color: white; border: none;"
 										value="Ingresar">
 								</form>
 							</div>
@@ -111,7 +110,7 @@
 										<td th:text="${registro.name}"></td>
 										<td th:text="${registro.cantidad}"></td>
 										<td th:text="${registro.costo}"></td>
-										<td><a class="btn btn-primary mt-3"
+										<td><a class="btn btn-danger mt-3"
 											th:href="@{'/preguardadoCompraseliminar?idp='+${registro.idProducto}}">Eliminar</a>
 
 										</td>
@@ -133,7 +132,7 @@
 								<form action="#" th:action="@{comprasProductos/guardar}"
 									method="post">
 																		
-									<input type="submit" class="btn btn-primary mt-2"
+									<input type="submit" class="btn btn-info mt-2"
 										value="Comprar">
 								</form>
 							</div>

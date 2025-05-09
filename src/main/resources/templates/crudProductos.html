@@ -25,17 +25,17 @@
 			<nav id="menu">
 				<ul>
 					<br>
-					<ul><a th:href="@{listar_Ctrl_Reposicion}">Gestion de Reposiciones</a></ul>
+					<ul><a class="btn btn-dark" th:href="@{listar_Ctrl_Reposicion}">Gestion de Reposiciones</a></ul>
 					<br>
-					<ul><a th:href="@{comprasProductos}">Compras</a></ul>
-					<ul><a th:href="@{ventaProductos}">Ventas</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{comprasProductos}">Compras</a></ul>
+					<ul><a  class="btn btn-ligth shadow-sm w-100" th:href="@{ventaProductos}">Ventas</a></ul>
 					<br>
-					<ul><a th:href="@{crud_Clientes}">Clientes</a></ul>
-					<ul><a th:href="@{crud_Proveedores}">Proveedores</a></ul>
-					<ul><a th:href="@{crud_Productos}">Productos</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Clientes}">Clientes</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Proveedores}">Proveedores</a></ul>
+					<ul><a  class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Productos}">Productos</a></ul>
 					<br>
 					<br>
-					<ul><a th:href="@{autentificar}">Cerrar sesión</a></ul>
+					<ul><a class="btn btn-dark w-100"  th:href="@{autentificar}">Cerrar sesión</a></ul>
 				</ul>
 			</nav>
 			<br />
@@ -52,7 +52,7 @@
 			<div>
 			<br>
 			<br>
-			<td><a class="btn btn-primary" th:href="@{'/crud_Crear_Producto'}">Crear Nuevo Producto</a></td>
+			<td><a class="btn btn-success" th:href="@{'/crud_Crear_Producto'}">Crear Nuevo Producto</a></td>
 			</div>
 			<div class="container text-center">
 				<table class="table">
@@ -76,8 +76,8 @@
 							<td th:text="${registro.getNameproveedor}"></td>
 							<td th:text="${registro.stock_max}"></td>
 							<td th:text="${registro.stock_min}"></td>
-							<td><a class="btn btn-primary" th:href="@{'/crud_invocar_edit_Producto?idprod='+${registro.idprod}}">Editar</a></td>
-							<td><a class="btn btn-primary" th:href="@{'/crud_eliminar_Producto?idprod='+${registro.idprod}}">Eliminar</a></td>
+							<td><a class="btn btn-warning" th:href="@{'/crud_invocar_edit_Producto?idprod='+${registro.idprod}}">Editar</a></td>
+							<td><a class="btn btn-danger" th:href="@{'/crud_eliminar_Producto?idprod='+${registro.idprod}}">Eliminar</a></td>
 						</tr>
 					</tbody>
 				</table>

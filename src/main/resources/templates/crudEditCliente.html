@@ -25,19 +25,18 @@
 			</article>
 			<nav id="menu">
 				<ul>
-
 					<br>
-					<ul><a th:href="@{listar_Ctrl_Reposicion}">Gestion de Reposiciones</a></ul>
+					<ul><a class="btn btn-dark" th:href="@{listar_Ctrl_Reposicion}">Gestion de Reposiciones</a></ul>
 					<br>
-					<ul><a th:href="@{comprasProductos}">Compras</a></ul>
-					<ul><a th:href="@{ventaProductos}">Ventas</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{comprasProductos}">Compras</a></ul>
+					<ul><a  class="btn btn-ligth shadow-sm w-100" th:href="@{ventaProductos}">Ventas</a></ul>
 					<br>
-					<ul><a th:href="@{crud_Clientes}">Clientes</a></ul>
-					<ul><a th:href="@{crud_Proveedores}">Proveedores</a></ul>
-					<ul><a th:href="@{crud_Productos}">Productos</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Clientes}">Clientes</a></ul>
+					<ul><a class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Proveedores}">Proveedores</a></ul>
+					<ul><a  class="btn btn-ligth shadow-sm w-100" th:href="@{crud_Productos}">Productos</a></ul>
 					<br>
 					<br>
-					<ul><a th:href="@{autentificar}">Cerrar sesión</a></ul>
+					<ul><a class="btn btn-dark w-100"  th:href="@{autentificar}">Cerrar sesión</a></ul>
 				</ul>
 			</nav>
 			<br />
@@ -62,7 +61,8 @@
 				</div>
 				<div>
 					<label class="form-label">RucDni</label>
-					<input type="text" class="form-control" th:field="*{rucdni}" >
+					<input type="text" class="form-control" th:field="*{rucdni}" 
+					pattern="^\d{8}|\d{11}$" title="Debe contener solo números, con exactamente 8 o 11 dígitos">
 				</div>
 				<div>
 					<label class="form-label"> Razón Social </label>
@@ -75,9 +75,12 @@
 				</div>
 				<div>
 					<label class="form-label">Telefono</label>
-					<input type="text" class="form-control" th:field="*{celular}">
+					<input type="text" class="form-control" th:field="*{celular}"
+					pattern="^\d{9,12}$" title="Debe contener solo números, entre 9 y 12 dígitos">
 				</div>
 				<input type="submit" class="btn btn-primary mt-2" value="Actualizar">
+				<a class="btn btn-secondary ms-3 mt-2" th:href="@{crud_Clientes}">Retornar</a>
+				
 			</form>
 		</div>
 	</div>
