@@ -16,6 +16,23 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	
+	<repositories>
+	  <repository>
+        <id>central</id>
+        <url>https://repo.maven.apache.org/maven2</url>
+    </repository>
+    <repository>
+        <id>jaspersoft-third-party</id>
+        <url>https://jaspersoft.jfrog.io/artifactory/third-party-ce-artifacts/</url>
+    </repository>
+    <repository>
+        <id>jr-ce-releases</id>
+        <url>https://jaspersoft.jfrog.io/artifactory/jr-ce-releases/</url>
+    </repository>
+</repositories>
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -58,20 +75,51 @@
 			<version>3.2.0</version>
 		</dependency>
 		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>6.9.0</version>
-		</dependency>
-	</dependencies>
+<groupId>net.sf.jasperreports</groupId>
+<artifactId>jasperreports</artifactId>
+<version>6.20.5</version>
+<exclusions>
+    <!-- Excluir la versión problemática de iText -->
+    <exclusion>
+        <groupId>com.lowagie</groupId>
+        <artifactId>itext</artifactId>
+    </exclusion>
+</exclusions>
+</dependency>
+
+<!-- Añadir la versión correcta de iText de Maven Central -->
+<dependency>
+<groupId>com.lowagie</groupId>
+<artifactId>itext</artifactId>
+<version>2.1.7</version>
+</dependency>
+
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jsr310</artifactId>
+</dependency>
+</dependencies>
 	
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+<plugins>
+<plugin>
+<groupId>org.springframework.boot</groupId>
+<artifactId>spring-boot-maven-plugin</artifactId>
+<configuration>
+    <excludes>
+        <exclude>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </exclude>
+    </excludes>
+</configuration>
+</plugin>
+</plugins>
+</build>
 
 </project>
