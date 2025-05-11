@@ -31,6 +31,7 @@ public class Capsula_producto {
 	@JoinColumn(name = "proveedor")
 	private Capsula_proveedor proveedor;
 	private int estado;
+	private boolean reponer;
 	
 	@OneToMany(mappedBy = "producto")
 	List<Capsula_operacion>lstCantidad;
@@ -43,7 +44,7 @@ public class Capsula_producto {
 
 	
 	public Capsula_producto(int idprod, Capsula_tipoproducto tipo, String descripcion, Double precio, int stock_min,
-			int stock_max, Capsula_proveedor proveedor, int estado, List<Capsula_operacion> lstCantidad) {
+			int stock_max, Capsula_proveedor proveedor, int estado, List<Capsula_operacion> lstCantidad, boolean reponer) {
 		this.idprod = idprod;
 		this.tipo = tipo;
 		this.descripcion = descripcion;
@@ -53,6 +54,7 @@ public class Capsula_producto {
 		this.proveedor = proveedor;
 		this.estado = estado;
 		this.lstCantidad = lstCantidad;
+		this.reponer = reponer;
 	}
 
 	
@@ -148,6 +150,12 @@ public class Capsula_producto {
 
 	public void setLstCantidad(List<Capsula_operacion> lstCantidad) {
 		this.lstCantidad = lstCantidad;
+	}
+
+
+	public void setReponer( boolean reponer) {
+		  this.reponer = reponer;
+		
 	}
 	
 	

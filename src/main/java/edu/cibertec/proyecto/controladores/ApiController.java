@@ -1,5 +1,6 @@
 package edu.cibertec.proyecto.controladores;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,7 +65,16 @@ public class ApiController {
     @GetMapping(value = "/reposiciones", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Capsula_producto> listarReposiciones() {
     	 List<Capsula_producto> productos = SProducto.listar();
-         // Para implementar: filtrar productos con stock bajo
-         return productos;
+    	 List<Capsula_producto> productosReponer = new ArrayList<>();
+    	 for (Capsula_producto producto : productos) {
+    	        if (producto.getStock() < producto.getStock_min()) {
+    	            producto.setReponer(true); // Marcamos el producto como "para reponer"
+    	            productosReponer.add(producto);
+    	        }
+    	    }
+    	 if (productosReponer.size() > 10) {
+    	        return productosReponer.subList(0, 10);
+    	    }
+    	   return productosReponer; 
     }
 }
